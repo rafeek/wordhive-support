@@ -1,0 +1,113 @@
+/* WordHive support site — shared styles */
+:root {
+  color-scheme: light dark;
+  --bg: #fdfaf3;
+  --card: #ffffff;
+  --ink: #2a2418;
+  --muted: #6b6152;
+  --rule: #e8dfcc;
+  --accent: #d98c14;
+  --accent-ink: #8a5806;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14120d;
+    --card: #1d1a13;
+    --ink: #f0e9db;
+    --muted: #a49a86;
+    --rule: #322c20;
+    --accent: #fabc38;
+    --accent-ink: #fabc38;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 2.5rem 1.25rem 4rem;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+header .mark {
+  font-size: 2.25rem;
+  line-height: 1;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.65rem;
+  letter-spacing: -0.01em;
+}
+
+header p {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+h2 {
+  margin: 2.25rem 0 0.6rem;
+  font-size: 1.15rem;
+  letter-spacing: -0.005em;
+}
+
+h3 {
+  margin: 1.5rem 0 0.4rem;
+  font-size: 1rem;
+}
+
+p, li { color: var(--ink); }
+
+a { color: var(--accent-ink); }
+
+ul { padding-left: 1.2rem; }
+
+li { margin: 0.3rem 0; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 1.25rem 1.4rem;
+  margin: 1.25rem 0;
+}
+
+.lede {
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.faq h3 { color: var(--accent-ink); }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0 1.25rem;
+}
+
+footer {
+  color: var(--muted);
+  font-size: 0.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: space-between;
+}
+
+footer nav { display: flex; gap: 1rem; }
