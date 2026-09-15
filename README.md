@@ -1,6 +1,6 @@
-# WordHive — support site
+# WordHive Puzzles — support site
 
-Public support and privacy pages for the WordHive app, served with GitHub Pages
+Public support and privacy pages for the WordHive Puzzles app, served with GitHub Pages
 from the root of this repository.
 
 | Page | URL |
