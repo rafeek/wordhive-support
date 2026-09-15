@@ -14,4 +14,6 @@ Both URLs go in App Store Connect under the app's version information.
 
 ## Editing
 
-Edit the HTML directly and push; Pages redeploys within a minute or two.
+Edit the HTML directly and push; Pages redeploys within a minute or two. The three
+how-to-play pages are generated — edit `gen_help.py` and run it, keeping the text in
+step with `HelpContent` in the app's `SettingsView.swift`.
