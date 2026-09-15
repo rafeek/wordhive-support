@@ -5,8 +5,8 @@ from the root of this repository.
 
 | Page | URL |
 | --- | --- |
-| Support | `https://<user>.github.io/wordhive-support/` |
-| Privacy policy | `https://<user>.github.io/wordhive-support/privacy.html` |
+| Support | `https://rafeek.github.io/wordhive-support/` |
+| Privacy policy | `https://rafeek.github.io/wordhive-support/privacy.html` |
 
 Both URLs go in App Store Connect under the app's version information.
 
