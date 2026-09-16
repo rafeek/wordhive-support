@@ -3,12 +3,32 @@
 
 Text mirrors HelpContent in the app's SettingsView.swift; keep the two in step.
 Run from the repo root: python3 gen_help.py
+
+The site header (brand + menu bar) is defined here in NAV and stamped into every
+generated page; index.html and privacy.html carry a hand-pasted copy, so update
+those when NAV changes.
 """
 import html
 
+NAV = [("index.html", "Support"), ("play-iphone-ipad.html", "iPhone & iPad"),
+       ("play-mac.html", "Mac"), ("play-apple-tv.html", "Apple TV"),
+       ("privacy.html", "Privacy")]
+
+def site_header(current):
+    links = "\n".join(
+        f'    <a href="{href}"{" aria-current=\"page\"" if href == current else ""}>{html.escape(label)}</a>'
+        for href, label in NAV)
+    return f"""<header class="site">
+  <a class="brand" href="index.html"><img class="mark" src="icon.png" alt="" width="32" height="32">WordHive Puzzles</a>
+  <nav>
+{links}
+  </nav>
+  <script>document.querySelector('.site nav [aria-current]').scrollIntoView({{inline: "center", block: "nearest"}})</script>
+</header>"""
+
 PLATFORMS = {
     "ios": dict(
-        file="play-iphone-ipad.html", name="iPhone & iPad", icon="📱",
+        file="play-iphone-ipad.html", name="iPhone & iPad", icon="📱", help_path="Settings → How to Play",
         select=("Tap or drag a line",
                 "Drag your finger from the first letter to the last, or tap the first then the last letter. Correct words lock in and cross off the word list."),
         move=("Zoom and pan",
@@ -24,7 +44,7 @@ PLATFORMS = {
         yours="Tap the gear to open Settings, where you can toggle sound effects and spoken words, pick a voice, switch between light and dark, and set your accent colours.",
     ),
     "mac": dict(
-        file="play-mac.html", name="Mac", icon="💻",
+        file="play-mac.html", name="Mac", icon="💻", help_path="Help → WordHive Help (⌘?)",
         select=("Click or drag a line",
                 "Drag from the first letter to the last, or click the first then the last letter. Correct words lock in and cross off the word list."),
         move=("Zoom and pan",
@@ -41,7 +61,7 @@ PLATFORMS = {
         yours="Open Settings (⌘,) to toggle sound effects and spoken words, pick a voice, switch between light and dark, and set your accent colours.",
     ),
     "tv": dict(
-        file="play-apple-tv.html", name="Apple TV", icon="📺",
+        file="play-apple-tv.html", name="Apple TV", icon="📺", help_path="Settings → How to Play",
         select=("Aim with the remote",
                 "Swipe on the remote's touch surface to glide the cursor across the grid. Click the first letter, then the last letter, to select a word. Correct words lock in and cross off the word list."),
         restart=("Restart a selection",
@@ -69,8 +89,6 @@ def section(title, rows):
     return f'<h2>{html.escape(title)}</h2>\n<div class="card">\n' + "\n".join(rows) + "\n</div>"
 
 def page(key, p):
-    others = " ".join(f'<a href="{q["file"]}">{q["icon"]} {html.escape(q["name"])}</a>'
-                      for k, q in PLATFORMS.items() if k != key)
     finding = [row(*p["select"])]
     if p.get("restart"):
         finding.append(row(*p["restart"]))
@@ -110,31 +128,26 @@ def page(key, p):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WordHive Puzzles — How to Play on {html.escape(p["name"])}</title>
 <meta name="description" content="How to play WordHive Puzzles on {html.escape(p["name"])}.">
+<link rel="icon" href="icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main class="help">
 
-<header>
-  <div class="mark">{p["icon"]}</div>
+{site_header(p["file"])}
+
+<div class="title">
+  <div class="mark" aria-hidden="true">{p["icon"]}</div>
   <div>
     <h1>How to play on {html.escape(p["name"])}</h1>
-    <p>WordHive Puzzles</p>
+    <p>The same guide is in the app under {html.escape(p["help_path"])}</p>
   </div>
-</header>
-
-<p class="switch">Other platforms: {others}</p>
+</div>
 
 {chr(10).join(sections)}
 
 <hr>
-<footer>
-  <span>© 2026 Rafeek Rahamut</span>
-  <nav>
-    <a href="index.html">Support</a>
-    <a href="privacy.html">Privacy</a>
-  </nav>
-</footer>
+<footer>© 2026 Rafeek Rahamut</footer>
 
 </main>
 </body>

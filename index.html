@@ -5,67 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WordHive Puzzles — Support</title>
 <meta name="description" content="Help and contact for WordHive Puzzles, a word search game for iPhone, iPad, Mac, and Apple TV.">
+<link rel="icon" href="icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
 
-<header>
-  <div class="mark">🐝</div>
-  <div>
-    <h1>WordHive Puzzles</h1>
-    <p>Support &amp; help</p>
-  </div>
+<header class="site">
+  <a class="brand" href="index.html"><img class="mark" src="icon.png" alt="" width="32" height="32">WordHive Puzzles</a>
+  <nav>
+    <a href="index.html" aria-current="page">Support</a>
+    <a href="play-iphone-ipad.html">iPhone &amp; iPad</a>
+    <a href="play-mac.html">Mac</a>
+    <a href="play-apple-tv.html">Apple TV</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+  <script>document.querySelector('.site nav [aria-current]').scrollIntoView({inline: "center", block: "nearest"})</script>
 </header>
 
-<p class="lede">WordHive Puzzles is a word search game for iPhone, iPad, Mac, and Apple TV. Choose a theme, a grid size and shape, and a word level, then find every hidden word.</p>
+<div class="title">
+  <div class="mark" aria-hidden="true">🛟</div>
+  <div>
+    <h1>Support</h1>
+    <p>Help and contact for WordHive Puzzles</p>
+  </div>
+</div>
 
 <h2>How to play</h2>
-<p>The controls differ by device, so each platform has its own guide:</p>
-<div class="platforms">
-  <a href="play-iphone-ipad.html"><span class="icon">📱</span><span class="name">iPhone &amp; iPad</span><span class="sub">Tap, drag, pinch</span></a>
-  <a href="play-mac.html"><span class="icon">💻</span><span class="name">Mac</span><span class="sub">Click, drag, keyboard</span></a>
-  <a href="play-apple-tv.html"><span class="icon">📺</span><span class="name">Apple TV</span><span class="sub">Siri Remote</span></a>
-</div>
-<p>The same guide is inside the app: Settings → How to Play, or Help → WordHive Help (⌘?) on the Mac.</p>
-
-<div class="card">
-  <strong>Need a hand?</strong><br>
-  Email <a href="mailto:wordhivepuzzlesapp+support@gmail.com">wordhivepuzzlesapp+support@gmail.com</a>. Please say which device you're on, its OS version, and the app version shown at the bottom of Settings → How to Play, and describe what you expected to happen.
-</div>
+<p>Controls differ by device, so each platform has its own guide: <a href="play-iphone-ipad.html">iPhone &amp; iPad</a>, <a href="play-mac.html">Mac</a>, and <a href="play-apple-tv.html">Apple TV</a>. The same guide is in the app under Settings → How to Play, or Help → WordHive Help (⌘?) on the Mac.</p>
 
 <h2>Frequently asked</h2>
 <div class="faq">
 
 <h3>Where do the puzzles come from?</h3>
-<p>Every puzzle is built on your device from a word bank bundled with the app. Nothing is downloaded, so the app works fully offline. There are 18 themes — Ocean, Space, Food, Animals, Music, Science, History, Sports, Nature, Technology, Mythology, Travel, Dinosaurs, Art, Gems, Vehicles, Fashion, and Home — and each theme draws from several subcategories, so the same theme gives different boards over time.</p>
-
-<h3>What do Simple and Advanced change?</h3>
-<p>Simple uses shorter, everyday words. Advanced keeps those and mixes in longer and less common ones.</p>
-
-<h3>What do the badges on the theme tiles mean?</h3>
-<p>A tick means you finished that theme with the current size, shape, and level. A count such as 3/12 is a puzzle in progress.</p>
-
-<h3>How do I start over on a theme?</h3>
-<p>Long-press the theme (right-click on the Mac; press and hold the click on Apple TV) and choose New Puzzle or Play Again. To wipe everything, use Settings → Reset all progress; that deletes every saved and completed puzzle on all your devices.</p>
+<p>Every puzzle is drawn from a word bank bundled with the app. Some boards are built on your device and some are pre-built and shipped with the app; nothing is downloaded, so the app works fully offline. There are 18 themes, each drawing on several subcategories, so the same theme gives different boards over time.</p>
 
 <h3>Does my game carry over between devices?</h3>
-<p>Yes, when each device is signed in to the same Apple Account with iCloud on. Your game in progress is saved as you play and synced when the app comes to the foreground. If a device is offline it catches up the next time it connects.</p>
+<p>Yes, when each device is signed in to the same Apple Account with iCloud on. Your game in progress is saved as you play and synced when the app comes to the foreground. A device that is offline catches up the next time it connects.</p>
 
 <h3>My game did not sync.</h3>
 <p>Check that all devices use the same Apple Account and that iCloud is on for the app. Bring the app to the foreground on the device that last played, wait a moment, then open it on the other device. Very recent moves can take a minute to arrive.</p>
-
-<h3>Can I see what a word means?</h3>
-<p>On iPhone, iPad, and Mac, double-tap (double-click) a word in the list to look it up. Apple TV has no dictionary, but clicking a word in the list reads it aloud.</p>
-
-<h3>How do I change the voice or turn off sound?</h3>
-<p>Open Settings inside the app. Sound effects and spoken words are separate toggles, and you can pick from the voices installed on your device.</p>
-
-<h3>Can I change the colors?</h3>
-<p>Yes. Settings has separate accent colours for light and dark appearance, a light/dark override, and an aurora background toggle. Apple TV also has an OLED screen saver that gently drifts the board.</p>
-
-<h3>Does WordHive Puzzles collect any data about me?</h3>
-<p>No. See the <a href="privacy.html">privacy policy</a>.</p>
 
 </div>
 
@@ -76,14 +55,16 @@
   <li>Apple TV — tvOS 17 or later</li>
 </ul>
 
+<h2>Contact</h2>
+<p>If you need help with WordHive Puzzles, email me at <a href="mailto:wordhivepuzzlesapp+support@gmail.com">wordhivepuzzlesapp+support@gmail.com</a>. Please include:</p>
+<ul>
+  <li>the device and its OS version</li>
+  <li>the app version, shown at the bottom of Settings → How to Play</li>
+  <li>what happened and what you expected instead</li>
+</ul>
+
 <hr>
-<footer>
-  <span>© 2026 Rafeek Rahamut</span>
-  <nav>
-    <a href="index.html">Support</a>
-    <a href="privacy.html">Privacy</a>
-  </nav>
-</footer>
+<footer>© 2026 Rafeek Rahamut</footer>
 
 </main>
 </body>
