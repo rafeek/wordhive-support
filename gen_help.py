@@ -36,6 +36,8 @@ PLATFORMS = {
         touch=("Selecting & scrolling",
                "Settings → Touch chooses what one finger does: Drag selects and two fingers scroll; Tap picks words by their first and last letter and one finger scrolls; Auto drags to select, but once you've tapped a first letter one finger scrolls until you tap the last."),
         twist=TWIST.format(v="Trace"),
+        mine=[("Create your own", "Open My Puzzles on the menu, choose Create, and pick a shape. Auto size finds the smallest board that holds every word and shows its size; turn it off to choose the size yourself. Add your words one at a time or paste a whole list; Copy List puts it back on the clipboard, Clear empties it, and Undo takes back the last change to the list. The list is kept in iCloud until you clear it. As you edit, the puzzle is tried in the background and you're told how many words fit and how many letters are filler. Preview shows the board, with any words left out and a bigger size suggested; hold Solution to see where the words are. Save keeps the puzzle in My Puzzles, and Play starts it."),
+              ("Import a printed puzzle", "In My Puzzles, choose Import and scan a printed word search with the camera, or pick a photo. Its letter grid and word list are read for you; a letter misread in a way only one fix explains is corrected automatically, and you can tap any letter or word to fix the rest.")],
         move=("Zoom and pan",
               "Pinch to zoom into a large grid and drag with two fingers to pan — or one finger, under the Tap and Auto touch settings. Pinch back out to see the whole board."),
         setup=("Size, shape & level",
@@ -58,6 +60,8 @@ PLATFORMS = {
         select=("Click or drag a line",
                 "Drag from the first letter to the last, or click the first then the last letter. Correct words lock in and cross off the word list."),
         twist=TWIST.format(v="Trace"),
+        mine=[("Create your own", "Open My Puzzles on the menu, choose Create, and pick a shape. Auto size finds the smallest board that holds every word and shows its size; turn it off to choose the size yourself. Add your words one at a time or paste a whole list; Copy List puts it back on the clipboard, Clear empties it, and Undo takes back the last change to the list. The list is kept in iCloud until you clear it. As you edit, the puzzle is tried in the background and you're told how many words fit and how many letters are filler. Preview shows the board, with any words left out and a bigger size suggested; hold Solution to see where the words are. Save keeps the puzzle in My Puzzles, and Play starts it."),
+              ("Import a printed puzzle", "In My Puzzles, choose Import and pick a photo or image file of a printed word search. Its letter grid and word list are read for you; a letter misread in a way only one fix explains is corrected automatically, and you can click any letter or word to fix the rest.")],
         move=("Zoom and pan",
               "Pinch on the trackpad to zoom into a large grid and scroll to pan. Pinch back out to see the whole board."),
         setup=("Size, shape & level",
@@ -85,6 +89,7 @@ PLATFORMS = {
         steer=("Steering on hex grids",
                "On Hex and Twist grids, swipe diagonally to step to a diagonal neighbour — the swipe snaps to the nearest of the six directions."),
         twist=TWIST.format(v="Click"),
+        mine=[("Create your own", "Open My Puzzles on the menu, choose Create, and pick a shape. Auto size finds the smallest board that holds every word and shows its size; turn it off to choose the size yourself. Add your words one at a time — type them, or hold the Siri button to dictate; Undo takes back the last change to the list. The list is kept in iCloud until you clear it. As you edit, the puzzle is tried in the background and you're told how many words fit and how many letters are filler. Select Preview to see the board beside your words, with any left out and a bigger size suggested; select Solution to show or hide where the words are. Save keeps the puzzle in My Puzzles, and Play starts it.")],
         move=("It always fits",
               "The whole board stays on screen, so there's nothing to zoom or pan — just aim the cursor with the remote."),
         setup=("Size, shape & level",
@@ -141,6 +146,9 @@ def page(key, p):
             row("Theme badges", "A tick means you finished that theme with the current size, shape, and level; a count (e.g. 3/12) marks a puzzle in progress."),
             row(*p["hold"]),
         ]),
+        section("My puzzles", [row(*pair) for pair in p["mine"]] + [row("Play them again",
+            "Your puzzles are saved and synced like the themes. " + ("They're listed in My Puzzles: click one to continue it, or use the buttons beside it to edit it (puzzles you made) or delete it. Editing a puzzle you made lets you rename it, change its words, shape or size, and regenerate the board." if key == "mac"
+            else "They're listed in My Puzzles: select one to continue it, or use the buttons beside it to edit it (puzzles you made) or delete it. Editing a puzzle you made lets you rename it, change its words, shape or size, and regenerate the board."))]),
         section("Saving & resuming", [row("Picks up where you left off", p["resume"])]),
     ]
     if p["keys"]:
