@@ -28,6 +28,10 @@ def site_header(current):
 
 TWIST = "On a Twist grid each word bends through neighbouring cells, often folded back on itself and crossing other words. {v} its letters one after another, from either end. The few spare letters are the puzzle's subtheme, scrambled."
 
+MP_HOST = "Choose Multiplayer on the menu and Host a Game, then wait for the others to join — everyone needs to be on the same Wi-Fi network or nearby. When everyone's in, pick a theme (a fresh board is made just for this game) or one of My Puzzles; that starts the game and closes it to anyone else."
+MP_JOIN = "Choose Multiplayer, then Join a Game, and pick the host from the list. You'll wait in the lobby until the host picks a puzzle."
+MP_PLAY = "Everyone plays the same board. It stays hidden until every player presses Start within 5 seconds of each other — if anyone takes longer, the count starts over. Each word can only be found once: whoever traces it first gets the points, and it's crossed off for everyone. Scores are shown along the bottom, and the highest score wins."
+
 PLATFORMS = {
     "ios": dict(
         file="play-iphone-ipad.html", name="iPhone & iPad", icon="📱", help_path="Settings → How to Play",
@@ -149,6 +153,8 @@ def page(key, p):
         section("My puzzles", [row(*pair) for pair in p["mine"]] + [row("Play them again",
             "Your puzzles are saved and synced like the themes. " + ("They're listed in My Puzzles: click one to continue it, or use the buttons beside it to edit it (puzzles you made) or delete it. Editing a puzzle you made lets you rename it, change its words, shape or size, and regenerate the board." if key == "mac"
             else "They're listed in My Puzzles: select one to continue it, or use the buttons beside it to edit it (puzzles you made) or delete it. Editing a puzzle you made lets you rename it, change its words, shape or size, and regenerate the board."))]),
+        section("Multiplayer", [row("Host a game", MP_HOST), row("Join a game", MP_JOIN),
+                                row("Play together", MP_PLAY)]),
         section("Saving & resuming", [row("Picks up where you left off", p["resume"])]),
     ]
     if p["keys"]:
