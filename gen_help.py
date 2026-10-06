@@ -28,9 +28,9 @@ def site_header(current):
 
 TWIST = "On a Twist grid each word bends through neighbouring cells, often folded back on itself and crossing other words. {v} its letters one after another, from either end. The few spare letters are the puzzle's subtheme, scrambled."
 
-MP_HOST = "Choose Multiplayer on the menu and Host a Game, then wait for the others to join — everyone needs to be on the same Wi-Fi network or nearby. When everyone's in, pick a theme (a fresh board is made just for this game) or one of My Puzzles; that starts the game and closes it to anyone else."
-MP_JOIN = "Choose Multiplayer, then Join a Game, and pick the host from the list. You'll wait in the lobby until the host picks a puzzle."
-MP_PLAY = "Everyone plays the same board. It stays hidden until every player presses Start within 5 seconds of each other — if anyone takes longer, the count starts over. Each word can only be found once: whoever traces it first gets the points, and it's crossed off for everyone. Scores are shown along the bottom, and the highest score wins."
+MP_HOST = "Choose Multiplayer on the menu and Host a Game, then wait for the others to join — everyone needs to be on the same Wi-Fi network or nearby. Pick a theme (a fresh board is made just for this game) or one of My Puzzles, then press Start when everyone's in — players can keep joining until then, and your Start is also your ready."
+MP_JOIN = "Choose Multiplayer, then Join a Game, and pick the host from the list. You can join until the host presses Start."
+MP_PLAY = "Everyone plays the same board. It stays hidden until the host presses Start and everyone else presses Start within 5 seconds of the host and each other — if anyone takes longer, the count starts over. Each word can only be found once: whoever traces it first gets the points, and it's crossed off for everyone. Scores are shown along the bottom, and the highest score wins."
 
 PLATFORMS = {
     "ios": dict(
@@ -41,7 +41,7 @@ PLATFORMS = {
                "Settings → Touch chooses what one finger does: Drag selects and two fingers scroll; Tap picks words by their first and last letter and one finger scrolls; Auto drags to select, but once you've tapped a first letter one finger scrolls until you tap the last."),
         twist=TWIST.format(v="Trace"),
         mine=[("Create your own", "Open My Puzzles on the menu, choose Create, and pick a shape. Auto size finds the smallest board that holds every word and shows its size; turn it off to choose the size yourself. Add your words one at a time or paste a whole list; Copy List puts it back on the clipboard, Clear empties it, and Undo takes back the last change to the list. The list is kept in iCloud until you clear it. As you edit, the puzzle is tried in the background and you're told how many words fit and how many letters are filler. Preview shows the board, with any words left out and a bigger size suggested; hold Solution to see where the words are. Save keeps the puzzle in My Puzzles, and Play starts it."),
-              ("Import a printed puzzle", "In My Puzzles, choose Import and scan a printed word search with the camera, or pick a photo. Its letter grid and word list are read for you; a letter misread in a way only one fix explains is corrected automatically, and you can tap any letter or word to fix the rest — or tap a letter to delete a stray row or column.")],
+              ("Import a printed puzzle", "In My Puzzles, choose Import and take a photo of a printed word search, or pick photos — the grid and its word list in one, or one of each, in any order or way up. Its letter grid and word list are read for you; a letter misread in a way only one fix explains is corrected automatically, and you can tap any letter or word to fix the rest — or tap a letter to delete a stray row or column.")],
         move=("Zoom and pan",
               "Pinch to zoom into a large grid and drag with two fingers to pan — or one finger, under the Tap and Auto touch settings. Pinch back out to see the whole board."),
         setup=("Size, shape & level",
@@ -65,7 +65,7 @@ PLATFORMS = {
                 "Drag from the first letter to the last, or click the first then the last letter. Correct words lock in and cross off the word list."),
         twist=TWIST.format(v="Trace"),
         mine=[("Create your own", "Open My Puzzles on the menu, choose Create, and pick a shape. Auto size finds the smallest board that holds every word and shows its size; turn it off to choose the size yourself. Add your words one at a time or paste a whole list; Copy List puts it back on the clipboard, Clear empties it, and Undo takes back the last change to the list. The list is kept in iCloud until you clear it. As you edit, the puzzle is tried in the background and you're told how many words fit and how many letters are filler. Preview shows the board, with any words left out and a bigger size suggested; hold Solution to see where the words are. Save keeps the puzzle in My Puzzles, and Play starts it."),
-              ("Import a printed puzzle", "In My Puzzles, choose Import and pick a photo or image file of a printed word search. Its letter grid and word list are read for you; a letter misread in a way only one fix explains is corrected automatically, and you can click any letter or word to fix the rest — or click a letter to delete a stray row or column.")],
+              ("Import a printed puzzle", "In My Puzzles, choose Import and pick photos or image files of a printed word search — the grid and its word list in one, or one of each, in any order or way up. Its letter grid and word list are read for you; a letter misread in a way only one fix explains is corrected automatically, and you can click any letter or word to fix the rest — or click a letter to delete a stray row or column.")],
         move=("Zoom and pan",
               "Pinch on the trackpad to zoom into a large grid and scroll to pan. Pinch back out to see the whole board."),
         setup=("Size, shape & level",
