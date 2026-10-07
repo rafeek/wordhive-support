@@ -29,7 +29,7 @@ def site_header(current):
 TWIST = "On a Twist grid each word bends through neighbouring cells, often folded back on itself and crossing other words. {v} its letters one after another, from either end. The few spare letters are the puzzle's subtheme, scrambled."
 
 MP_HOST = "Choose Multiplayer on the menu and Host a Game, then wait for the others to join — everyone needs to be on the same Wi-Fi network or nearby. Pick a theme (a fresh board is made just for this game) or one of My Puzzles, then press Start when everyone's in — players can keep joining until then, and your Start is also your ready."
-MP_JOIN = "Choose Multiplayer, then Join a Game, and pick the host from the list. You can join until the host presses Start."
+MP_JOIN = "Choose Multiplayer: games hosted nearby are listed there, each with its own Join button. You can join until the host presses Start."
 MP_PLAY = "Everyone plays the same board. It stays hidden until the host presses Start and everyone else presses Start within 5 seconds of the host and each other — if anyone takes longer, the count starts over. Each word can only be found once: whoever traces it first gets the points, and it's crossed off for everyone. Scores are shown along the bottom, and the highest score wins."
 
 PLATFORMS = {
