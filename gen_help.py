@@ -90,6 +90,8 @@ PLATFORMS = {
                 "Swipe on the remote's touch surface to glide the cursor across the grid. Click the first letter, then the last letter, to select a word. Correct words lock in and cross off the word list."),
         restart=("Restart a selection",
                  "Press play/pause to clear a selection you've started and aim again."),
+        pad=("Play with a game controller",
+             "Point the left stick where you want the cursor: centred is the middle of the board, pushed all the way is its edge, and letting go leaves the cursor where it is. The d-pad steps one letter at a time. A selects a letter, X clears a selection, and B goes back."),
         steer=("Steering on hex grids",
                "On Hex and Twist grids, swipe diagonally to step to a diagonal neighbour — the swipe snaps to the nearest of the six directions."),
         twist=TWIST.format(v="Click"),
@@ -126,6 +128,8 @@ def page(key, p):
         finding.append(row(*p["touch"]))
     if p.get("restart"):
         finding.append(row(*p["restart"]))
+    if p.get("pad"):
+        finding.append(row(*p["pad"]))
     if p.get("steer"):
         finding.append(row(*p["steer"]))
     finding.append(row("Any straight line",
