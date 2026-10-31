@@ -5,8 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WordHive Puzzles — Support</title>
 <meta name="description" content="Help and contact for WordHive Puzzles, a word search game for iPhone, iPad, Mac, and Apple TV.">
+<link rel="alternate" hreflang="en" href="https://rafeek.github.io/wordhive-support/index.html">
+<link rel="alternate" hreflang="fr" href="https://rafeek.github.io/wordhive-support/fr/index.html">
+<link rel="alternate" hreflang="es" href="https://rafeek.github.io/wordhive-support/es/index.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://rafeek.github.io/wordhive-support/zh-Hans/index.html">
+<link rel="alternate" hreflang="x-default" href="https://rafeek.github.io/wordhive-support/index.html">
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="style.css">
+<script>
+try {
+  if (!localStorage.getItem("lang")) {
+    for (const l of navigator.languages || [navigator.language]) {
+      const s = l.toLowerCase()
+      const m = s.startsWith("en") ? "en" : s.startsWith("fr") ? "fr" : s.startsWith("es") ? "es"
+        : s.startsWith("zh") && !/hant|tw|hk|mo/.test(s) ? "zh-Hans" : null
+      if (m) { if (m !== "en") location.replace(m + "/"); break }
+    }
+  }
+} catch (e) {}
+</script>
 </head>
 <body>
 <main>
@@ -38,19 +55,22 @@
 <div class="faq">
 
 <h3>Where do the puzzles come from?</h3>
-<p>Every puzzle is drawn from a word bank bundled with the app. Some boards are built on your device and some are pre-built and shipped with the app; nothing is downloaded, so the app works fully offline. There are 18 themes, each drawing on several subcategories, so the same theme gives different boards over time.</p>
+<p>Every puzzle is drawn from a word bank bundled with the app. Some boards are built on your device and some are pre-built and shipped with the app. Nothing is downloaded, so the app works fully offline. There are 18 themes, each drawing on several subcategories, so the same theme gives different boards over time. Under My Puzzles you can also make your own from a list of words, or import a printed word search from a photo (iPhone, iPad, and Mac).</p>
 
 <h3>Does my game carry over between devices?</h3>
-<p>Yes, when each device is signed in to the same Apple Account with iCloud on. Your game in progress is saved as you play and synced when the app comes to the foreground. A device that is offline catches up the next time it connects.</p>
+<p>Yes, when each device is signed in to the same Apple Account with iCloud on. Your games in progress, finished puzzles, and My Puzzles are saved as you play and synced when the app comes to the foreground. A device that is offline catches up the next time it connects. Photos of imported puzzles stay on the device that read them.</p>
 
 <h3>My game did not sync.</h3>
 <p>Check that all devices use the same Apple Account and that iCloud is on for the app. Bring the app to the foreground on the device that last played, wait a moment, then open it on the other device. Very recent moves can take a minute to arrive.</p>
+
+<h3>Multiplayer can't find a game.</h3>
+<p>Everyone needs to be on the same Wi-Fi network, or close by, and WordHive Puzzles needs Local Network access. Turn it on in Settings → Privacy & Security → Local Network on iPhone and iPad, or in System Settings → Privacy & Security → Local Network on a Mac. Games can be joined until the host presses Start.</p>
 
 </div>
 
 <h2>Requirements</h2>
 <ul>
-  <li>iPhone or iPad — iOS / iPadOS 17 or later</li>
+  <li>iPhone &amp; iPad — iOS / iPadOS 17 or later</li>
   <li>Mac — macOS 14 or later</li>
   <li>Apple TV — tvOS 17 or later</li>
 </ul>
@@ -64,7 +84,10 @@
 </ul>
 
 <hr>
-<footer>© 2026 Rafeek Rahamut</footer>
+<footer>
+  <nav class="langs" aria-label="Language"><a href="index.html" hreflang="en" lang="en" aria-current="true" onclick="try { localStorage.setItem('lang', 'en') } catch (e) {}">English</a> · <a href="fr/index.html" hreflang="fr" lang="fr" onclick="try { localStorage.setItem('lang', 'fr') } catch (e) {}">Français</a> · <a href="es/index.html" hreflang="es" lang="es" onclick="try { localStorage.setItem('lang', 'es') } catch (e) {}">Español</a> · <a href="zh-Hans/index.html" hreflang="zh-Hans" lang="zh-Hans" onclick="try { localStorage.setItem('lang', 'zh-Hans') } catch (e) {}">简体中文</a></nav>
+  <p>© 2026 Rafeek Rahamut</p>
+</footer>
 
 </main>
 </body>
