@@ -28,9 +28,10 @@ def site_header(current):
 
 TWIST = "On a Twist grid each word bends through neighbouring cells, often folded back on itself and crossing other words. {v} its letters one after another, from either end. The few spare letters are the puzzle's subtheme, scrambled."
 
-MP_HOST = "Choose Multiplayer on the menu and Host a Game, then wait for the others to join — everyone needs to be on the same Wi-Fi network or nearby. Pick a theme (a fresh board is made just for this game) or one of My Puzzles, then press Start when everyone's in — players can keep joining until then, and your Start is also your ready."
+MP_HOST = "Choose Multiplayer on the menu, type the name the others will see, and choose Host a Game, then wait for the others to join — everyone needs to be on the same Wi-Fi network or nearby. Pick a theme (a fresh board is made just for this game) or one of My Puzzles, then press Start when everyone's in — players can keep joining until then, and your Start is also your ready."
+PRINT = "Choose Print on the menu, then pick a theme or one of My Puzzles. A theme prints with the size, shape and level chosen on the menu — the puzzle you have in progress if there is one, otherwise a new board, and Regenerate makes another. The preview shows the page as it will print: choose Portrait or Landscape and the paper size, and for a puzzle you've started, whether to print it clean or with the words you've found marked. Print sends it to a printer. Done leaves Print."
 MP_JOIN = "Choose Multiplayer: games hosted nearby are listed there, each with its own Join button. You can join until the host presses Start."
-MP_PLAY = "Everyone plays the same board. It stays hidden until the host presses Start and everyone else presses Start within 5 seconds of the host and each other — if anyone takes longer, the count starts over. Each word can only be found once: whoever traces it first gets the points, and it's crossed off for everyone. Scores are shown along the bottom, and the highest score wins."
+MP_PLAY = "Everyone plays the same board. It stays hidden until the host presses Start and everyone else presses Start within 5 seconds of the host and each other — if anyone takes longer, the count starts over. Each word can only be found once: whoever finds it first gets the points, and it's crossed off for everyone. Scores are shown along the bottom, and the highest score wins."
 
 PLATFORMS = {
     "ios": dict(
@@ -40,23 +41,23 @@ PLATFORMS = {
         touch=("Selecting & scrolling",
                "Settings → Touch chooses what one finger does: Drag selects and two fingers scroll; Tap picks words by their first and last letter and one finger scrolls; Auto drags to select, but once you've tapped a first letter one finger scrolls until you tap the last."),
         twist=TWIST.format(v="Trace"),
-        mine=[("Create your own", "Open My Puzzles on the menu, choose Create, and pick a shape. Auto size finds the smallest board that holds every word and shows its size; turn it off to choose the size yourself. Add your words one at a time or paste a whole list; Copy List puts it back on the clipboard, Clear empties it, and Undo takes back the last change to the list. The list is kept in iCloud until you clear it. As you edit, the puzzle is tried in the background and you're told how many words fit and how many letters are filler. Preview shows the board, with any words left out and a bigger size suggested; hold Solution to see where the words are. Save keeps the puzzle in My Puzzles, Cancel leaves without it, and Play starts it."),
-              ("Import a printed puzzle", "In My Puzzles, choose Import and take a photo of a printed word search, or pick photos — the grid and its word list in one, or one of each, in any order or way up. Its letter grid and word list are read for you; a letter misread in a way only one fix explains is corrected automatically, and you can tap any letter or word to fix the rest — or tap a letter to delete a stray row or column. Tapping a word shows where it was read in the photo; a word that isn't in the grid (often part of the puzzle's heading) can be made the title. The printed name is used as the title when it can be told. Save keeps the puzzle in My Puzzles; Cancel leaves without it.")],
+        mine=[("Create your own", "Open My Puzzles on the menu, choose Create, name your puzzle, and pick a shape. Auto size finds the smallest board that holds every word and shows its size; turn it off to choose the size yourself. Add your words one at a time or paste a whole list; Copy List puts it back on the clipboard, Clear empties it, and Undo takes back the last change to the list. The list is kept in iCloud until you clear it or save or play it as a puzzle. As you edit, the puzzle is tried in the background and you're told how many words fit and how many letters are filler. Preview shows the board, with any words left out and a bigger size suggested; Try Again makes another board, and holding Solution shows where the words are. Save keeps the puzzle in My Puzzles, Cancel leaves without it, and Play starts it."),
+              ("Import a printed puzzle", "In My Puzzles, choose Import and take a photo of a printed word search, or pick photos — the grid and its word list in one, or one of each, in any order or way up. Its letter grid and word list are read for you; a letter misread in a way only one fix explains is corrected automatically (Undo puts it back), likely misreads are offered under Possible fixes, and you can tap any letter or word to fix the rest — or tap a letter to delete a stray row or column. Tapping a word shows where it was read in the photo; a word that isn't in the grid (often part of the puzzle's heading) can be made the title. A word read apart from the rest of the list, such as part of a heading, is marked to check. The printed name is used as the title when it can be told. Words not found in the grid are left out when you play. Save keeps the puzzle in My Puzzles; Cancel leaves without it.")],
         move=("Zoom and pan",
               "Pinch to zoom into a large grid and drag with two fingers to pan — or one finger, under the Tap and Auto touch settings. Pinch back out to see the whole board."),
         setup=("Size, shape & level",
                "Pick a grid size (Small, Medium, Large), a shape (Square, Hex or Twist), and a word level — Simple for everyday words, Advanced adds harder ones. Then choose a theme."),
-        hold=("Long-press a theme",
-              "Press and hold a started or finished theme to continue it, start a new puzzle, or play it again. It also lists any puzzle for that theme left in progress under a different size, shape or level, so you can jump back into it."),
-        resume="Your current game is saved automatically and synced across your devices through iCloud. Tap Continue on the menu to jump back in. Settings → Reset all progress deletes every saved puzzle, on every device.",
+        hold=("Touch and hold a theme",
+              "Touch and hold a started or finished theme to continue it, start a new puzzle, or play it again. It also lists any puzzle for that theme left in progress under a different size, shape or level, so you can jump back into it."),
+        resume="Your current game is saved automatically and synced across your devices through iCloud. Tap Continue on the menu to jump back in. Settings → Reset all progress deletes every game in progress and every finished puzzle, on every device; My Puzzles are kept, back at the start.",
         define=("Double-tap a word",
                 "Double-tap any word in the list to see its dictionary definition."),
         keys=None,
-        yours="Tap the gear to open Settings, where you can toggle sound effects and spoken words, pick a voice, switch between light and dark, set your accent colours, choose the menu-to-game transition, and choose how touch selects and scrolls.",
+        yours="Tap the gear to open Settings, where you can toggle sound effects and spoken words, pick a voice, switch between light and dark, set your accent colours, turn the aurora background on or off, choose the menu-to-game transition, and choose how touch selects and scrolls.",
         a11y=[("VoiceOver",
-               "Each letter reads as its row, column, and letter, and says whether it is selected or found. Double-tap the first letter of a word, then its last, to select it; the Clear selection action drops a selection you've started. Words in the list read as found or not found — double-tap one to hear it, or use the Define action. Every word you find is announced."),
+               "Each letter reads as its row, column, and letter, and says whether it is selected or found. Double-tap the first letter of a word, then its last (on a Twist grid, each of its letters in turn), to select it; the Clear selection action drops a selection you've started. Words in the list read as found or not found — double-tap one to hear it, or use the Define action. Every word you find is announced."),
               ("Reduce Motion",
-               "When Reduce Motion is on in Settings → Accessibility, the moving background, menu transitions, and found-word flourishes are switched off."),
+               "When Reduce Motion is on in Settings → Accessibility → Motion, the moving background, the menu's bees and wavy title, menu transitions, and found-word flourishes (confetti, bounces, flying points) are switched off."),
               ("Hear a word", "Tap any word in the list to hear it spoken in the voice chosen in Settings.")],
     ),
     "mac": dict(
@@ -64,24 +65,24 @@ PLATFORMS = {
         select=("Click or drag a line",
                 "Drag from the first letter to the last, or click the first then the last letter. Correct words lock in and cross off the word list."),
         twist=TWIST.format(v="Trace"),
-        mine=[("Create your own", "Open My Puzzles on the menu, choose Create, and pick a shape. Auto size finds the smallest board that holds every word and shows its size; turn it off to choose the size yourself. Add your words one at a time or paste a whole list; Copy List puts it back on the clipboard, Clear empties it, and Undo takes back the last change to the list. The list is kept in iCloud until you clear it. As you edit, the puzzle is tried in the background and you're told how many words fit and how many letters are filler. Preview shows the board, with any words left out and a bigger size suggested; hold Solution to see where the words are. Save keeps the puzzle in My Puzzles, Cancel leaves without it, and Play starts it."),
-              ("Import a printed puzzle", "In My Puzzles, choose Import and pick photos or image files of a printed word search — the grid and its word list in one, or one of each, in any order or way up. Its letter grid and word list are read for you; a letter misread in a way only one fix explains is corrected automatically, and you can click any letter or word to fix the rest — or click a letter to delete a stray row or column. Clicking a word shows where it was read in the photo; a word that isn't in the grid (often part of the puzzle's heading) can be made the title. The printed name is used as the title when it can be told. Save keeps the puzzle in My Puzzles; Cancel leaves without it.")],
-        move=("Zoom and pan",
-              "Pinch on the trackpad to zoom into a large grid and scroll to pan. Pinch back out to see the whole board."),
+        mine=[("Create your own", "Open My Puzzles on the menu, choose Create, name your puzzle, and pick a shape. Auto size finds the smallest board that holds every word and shows its size; turn it off to choose the size yourself. Add your words one at a time or paste a whole list; Copy List puts it back on the clipboard, Clear empties it, and Undo takes back the last change to the list. The list is kept in iCloud until you clear it or save or play it as a puzzle. As you edit, the puzzle is tried in the background and you're told how many words fit and how many letters are filler. Preview shows the board, with any words left out and a bigger size suggested; Try Again makes another board, and holding Solution shows where the words are. Save keeps the puzzle in My Puzzles, Cancel leaves without it, and Play starts it."),
+              ("Import a printed puzzle", "In My Puzzles, choose Import and pick photos or image files of a printed word search — the grid and its word list in one, or one of each, in any order or way up. Its letter grid and word list are read for you; a letter misread in a way only one fix explains is corrected automatically (Undo puts it back), likely misreads are offered under Possible fixes, and you can click any letter or word to fix the rest — or click a letter to delete a stray row or column. Clicking a word shows where it was read in the photo; a word that isn't in the grid (often part of the puzzle's heading) can be made the title. A word read apart from the rest of the list, such as part of a heading, is marked to check. The printed name is used as the title when it can be told. Words not found in the grid are left out when you play. Save keeps the puzzle in My Puzzles; Cancel leaves without it.")],
+        move=("It fits the window",
+              "The whole board always fits the window, so there's nothing to zoom or pan. Make the window bigger, or full screen, for larger letters."),
         setup=("Size, shape & level",
                "Pick a grid size (Small, Medium, Large), a shape (Square, Hex or Twist), and a word level — Simple for everyday words, Advanced adds harder ones. Then choose a theme."),
         hold=("Right-click a theme",
-              "Right-click (or click and hold) a started or finished theme to continue it, start a new puzzle, or play it again. It also lists any puzzle for that theme left in progress under a different size, shape or level, so you can jump back into it."),
-        resume="Your current game is saved automatically and synced across your devices through iCloud. Click Continue on the menu to jump back in. Settings → Reset all progress deletes every saved puzzle, on every device.",
+              "Right-click (or Control-click) a started or finished theme to continue it, start a new puzzle, or play it again. It also lists any puzzle for that theme left in progress under a different size, shape or level, so you can jump back into it."),
+        resume="Your current game is saved automatically and synced across your devices through iCloud. Click Continue on the menu to jump back in. Settings → Reset all progress deletes every game in progress and every finished puzzle, on every device; My Puzzles are kept, back at the start.",
         define=("Double-click a word",
                 "Double-click any word in the list to open its definition in the Look Up panel."),
-        keys=("Keyboard & menus", [("New Game", "⌘N"), ("Back to Menu", "⇧⌘M"),
+        keys=("Keyboard & menus", [("New Game", "⌘N"), ("Back to Menu", "⇧⌘M"), ("Print", "⌘P"),
                                    ("Settings", "⌘,"), ("Help", "⌘?")]),
-        yours="Open Settings (⌘,) to toggle sound effects and spoken words, pick a voice, switch between light and dark, set your accent colours, and choose the menu-to-game transition.",
+        yours="Open Settings (⌘,) to toggle sound effects and spoken words, pick a voice, switch between light and dark, set your accent colours, turn the aurora background on or off, and choose the menu-to-game transition.",
         a11y=[("VoiceOver",
-               "Each letter reads as its row, column, and letter, and says whether it is selected or found. Activate the first letter of a word, then its last, to select it; the Clear selection action drops a selection you've started. Words in the list read as found or not found — activate one to hear it, or use the Define action. Every word you find is announced."),
+               "Each letter reads as its row, column, and letter, and says whether it is selected or found. Activate the first letter of a word, then its last (on a Twist grid, each of its letters in turn), to select it; the Clear selection action drops a selection you've started. Words in the list read as found or not found — activate one to hear it, or use the Define action. Every word you find is announced."),
               ("Reduce Motion",
-               "When Reduce Motion is on in System Settings → Accessibility → Display, the moving background, menu transitions, and found-word flourishes are switched off."),
+               "When Reduce Motion is on in System Settings → Accessibility → Display, the moving background, the menu's bees and wavy title, menu transitions, and found-word flourishes (confetti, bounces, flying points) are switched off."),
               ("Hear a word", "Click any word in the list to hear it spoken in the voice chosen in Settings.")],
     ),
     "tv": dict(
@@ -95,24 +96,25 @@ PLATFORMS = {
         steer=("Steering on hex grids",
                "On Hex and Twist grids, swipe diagonally to step to a diagonal neighbour — the swipe snaps to the nearest of the six directions."),
         twist=TWIST.format(v="Click"),
-        mine=[("Create your own", "Open My Puzzles on the menu, choose Create, and pick a shape. Auto size finds the smallest board that holds every word and shows its size; turn it off to choose the size yourself. Add your words one at a time — type them, or hold the Siri button to dictate; Undo takes back the last change to the list. The list is kept in iCloud until you clear it. As you edit, the puzzle is tried in the background and you're told how many words fit and how many letters are filler. Select Preview to see the board beside your words, with any left out and a bigger size suggested; select Solution to show or hide where the words are. Save keeps the puzzle in My Puzzles, and Play starts it.")],
+        mine=[("Create your own", "Open My Puzzles on the menu, choose Create, name your puzzle, and pick a shape. Auto size finds the smallest board that holds every word and shows its size; turn it off to choose the size yourself. Add your words one at a time — type them, or hold the Siri button to dictate; Undo takes back the last change to the list, and Clear empties it. The list is kept in iCloud until you clear it or save or play it as a puzzle. As you edit, the puzzle is tried in the background and you're told how many words fit and how many letters are filler. Select Preview to see the board beside your words, with any left out and a bigger size suggested; Try Again makes another board, and Solution shows or hides where the words are. Save keeps the puzzle in My Puzzles, and Play starts it.")],
         move=("It always fits",
               "The whole board stays on screen, so there's nothing to zoom or pan — just aim the cursor with the remote."),
         setup=("Size, shape & level",
                "Choose a grid size (Small, Medium, Large), a shape (Square, Hex or Twist), and a word level — Simple for everyday words, Advanced adds harder ones. Highlight a bar and swipe left or right, or click to step through its options. Then pick a theme."),
         hold=("Hold to choose",
               "Press and hold the remote's click on a started or finished theme to continue it, start a new puzzle, or play it again. It also lists any puzzle for that theme left in progress under a different size, shape or level, so you can jump back into it."),
-        resume="Your current game is saved automatically and synced across your devices through iCloud. Select Continue on the menu to jump back in. Settings → Reset all progress deletes every saved puzzle, on every device.",
+        resume="Your current game is saved automatically and synced across your devices through iCloud. Select Continue on the menu to jump back in. Settings → Reset all progress deletes every game in progress and every finished puzzle, on every device; My Puzzles are kept, back at the start.",
         wordlist=("Hear a word",
                   "Swipe right past the edge of the grid to move into the word list, then click a word to hear it spoken. Swipe left past the first column to return to the grid."),
         define=None,
         keys=("The remote", [("Move the cursor", "Swipe"), ("Select a letter", "Click"),
-                             ("Cancel a selection", "Play/Pause"), ("Back to menu", "Menu")]),
-        yours="Open Settings from the gear on the menu to toggle sound effects and spoken words, pick a voice, switch between light and dark, set your accent colours, choose the menu-to-game transition, and turn on the OLED screen saver.",
+                             ("Cancel a selection", "Play/Pause"), ("Hide the finished card", "Back / Menu"),
+                             ("Back to menu", "Back / Menu")]),
+        yours="Open Settings from the gear on the menu to toggle sound effects and spoken words, pick a voice, switch between light and dark, turn the aurora background on or off, choose the menu-to-game transition, and turn on the OLED screen saver.",
         a11y=[("VoiceOver",
                "Words in the list read as found or not found, and every word you find is announced. The grid itself is played by aiming the cursor with the remote."),
               ("Reduce Motion",
-               "When Reduce Motion is on in Settings → Accessibility → Motion, the moving background, menu transitions, and found-word flourishes are switched off.")],
+               "When Reduce Motion is on in Settings → Accessibility → Motion, the moving background, the menu's bees and wavy title, menu transitions, and found-word flourishes (confetti, bounces, flying points) are switched off.")],
     ),
 }
 
@@ -151,12 +153,15 @@ def page(key, p):
         ]),
         section("Setting up a puzzle", [
             row(*p["setup"]),
-            row("Theme badges", "A tick means you finished that theme with the current size, shape, and level; a count (e.g. 3/12) marks a puzzle in progress."),
+            row("Theme badges", "A tick means you finished that theme with the current size, shape, and level; a play triangle marks a puzzle in progress."),
             row(*p["hold"]),
         ]),
         section("My puzzles", [row(*pair) for pair in p["mine"]] + [row("Play them again",
-            "Your puzzles are saved and synced like the themes. " + ("They're listed in My Puzzles: click one to continue it, or use the buttons beside it to edit it or delete it. Editing a puzzle you made lets you rename it, change its words, shape or size, and regenerate the board. Editing an imported puzzle (on iPhone, iPad or Mac) opens it in Import again, with the photos it was read from, to correct it." if key == "mac"
-            else "They're listed in My Puzzles: select one to continue it, or use the buttons beside it to edit it or delete it. Editing a puzzle you made lets you rename it, change its words, shape or size, and regenerate the board. Editing an imported puzzle (on iPhone, iPad or Mac) opens it in Import again, with the photos it was read from, to correct it."))]),
+            "Your puzzles are saved and synced like the themes. " + ("They're listed in My Puzzles: click one to continue it, or use the buttons beside it to preview its board and words, edit it or delete it. Editing a puzzle you made lets you rename it, change its words, shape or size, and regenerate the board. Editing an imported puzzle (on iPhone, iPad or Mac) opens it in Import again to correct it, with the photos it was read from on the device that imported it — photos aren't synced. Settings → Delete all My Puzzles removes every one of them, on every device." if key == "mac"
+            else "They're listed in My Puzzles: tap one to continue it, tap the eye beside it to preview its board and words, or swipe it left to edit or delete it. Editing a puzzle you made lets you rename it, change its words, shape or size, and regenerate the board. Editing an imported puzzle (on iPhone, iPad or Mac) opens it in Import again to correct it, with the photos it was read from on the device that imported it — photos aren't synced. Settings → Delete all My Puzzles removes every one of them, on every device." if key == "ios"
+            else "They're listed in My Puzzles: select one to continue it, or use the buttons beside it to preview its board and words, edit it or delete it. Editing a puzzle you made lets you rename it, change its words, shape or size, and regenerate the board. Editing an imported puzzle (on iPhone, iPad or Mac) opens it in Import again to correct it, with the photos it was read from on the device that imported it — photos aren't synced. Settings → Delete all My Puzzles removes every one of them, on every device."))]),
+    ] + ([section("Printing", [row("Print a puzzle", PRINT + (" During a game, File → Print (⌘P) prints the board you're playing." if key == "mac" else ""))])]
+         if key != "tv" else []) + [
         section("Multiplayer", [row("Host a game", MP_HOST), row("Join a game", MP_JOIN),
                                 row("Play together", MP_PLAY)]),
         section("Saving & resuming", [row("Picks up where you left off", p["resume"])]),
