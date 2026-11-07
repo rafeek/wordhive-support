@@ -48,7 +48,8 @@ def app(key, lang):
 
 OS = {"ios": "iOS", "mac": "macOS", "tv": "tvOS"}
 STR = r'"((?:[^"\\]|\\.)*)"'
-TOKEN = re.compile(rf'section\({STR}\)|row\({STR},\s*{STR},\s*{STR}\)|shortcut\({STR},\s*{STR}\)')
+TOKEN = re.compile(rf'section\({STR}\)|row\({STR},\s*{STR},\s*{STR}\)|shortcut\({STR},\s*{STR}\)'
+                   rf'|step\((\d+),\s*{STR},\s*{STR}\)')
 
 
 def holds(cond, plat):
@@ -91,8 +92,10 @@ def guide(plat):
             sections.append((unquote(m[1]), []))
         elif m[2] is not None:
             sections[-1][1].append(("row", unquote(m[3]), unquote(m[4])))
-        else:
+        elif m[5] is not None:
             sections[-1][1].append(("key", unquote(m[5]), unquote(m[6])))
+        else:
+            sections[-1][1].append(("step", unquote(m[8]), unquote(m[9]), m[7]))
     return sections
 
 
@@ -411,16 +414,38 @@ def help_page(lang, folder, plat):
     for title, rows in guide(plat):
         heading = app(title, lang)
         cells = []
-        for kind, a, b in rows:
+        for kind, a, b, *n in rows:
             a, b = html.escape(app(a, lang)), html.escape(app(b, lang))
-            cells.append(f'<div class="row"><strong>{a}</strong><p>{b}</p></div>' if kind == "row"
-                         else f'<div class="row keys"><span>{a}</span><kbd>{b}</kbd></div>')
-        out.append(f"<h2>{html.escape(heading.capitalize())}</h2>\n<div class=\"card\">\n" + "\n".join(cells) + "\n</div>")
+            if kind == "row":
+                cells.append(f'<div class="row"><strong>{a}</strong><p>{b}</p></div>')
+            elif kind == "step":
+                cells.append(f'<div class="row step"><span class="num">{n[0]}</span>'
+                             f'<div><strong>{a}</strong><p>{b}</p></div></div>')
+            else:
+                cells.append(f'<div class="row keys"><span>{a}</span><kbd>{b}</kbd></div>')
+        # The anchor is the English title in every language, so a link to a section
+        # can be swapped between languages by changing only the folder.
+        anchor = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
+        heading = html.escape(heading.capitalize())
+        out.append(f'<details class="section" id="{anchor}" open>\n'
+                   f'<summary><h2>{heading}</h2><a class="anchor" href="#{anchor}" aria-label="{heading}">#</a></summary>\n'
+                   f'<div class="card">\n' + "\n".join(cells) + "\n</div>\n</details>")
     where = html.escape(menu_path(p["path"], lang, p["keys"]))
     return shell(lang, folder, p["file"], t("help.title", lang, **names),
                  t("help.description", lang, **names), p["icon"],
                  html.escape(t("help.title", lang, **names)), t("help.where", lang, path=where),
-                 "\n\n".join(out), help_page=True)
+                 "\n\n".join(out) + "\n\n" + OPEN_TARGET, help_page=True)
+
+
+# A link to a collapsed section opens it.
+OPEN_TARGET = """<script>
+function openTarget() {
+  const el = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (el && el.tagName === "DETAILS" && !el.open) { el.open = true; el.scrollIntoView(); }
+}
+addEventListener("hashchange", openTarget);
+openTarget();
+</script>"""
 
 
 def mailto():
