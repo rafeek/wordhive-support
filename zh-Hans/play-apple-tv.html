@@ -50,8 +50,8 @@
 <div class="row"><strong>重新选择</strong><p>按播放/暂停键可清除已开始的选择并重新瞄准。</p></div>
 <div class="row"><strong>使用游戏手柄</strong><p>将左摇杆指向光标要去的位置：居中为网格中心，推到底为边缘，松开后光标保持不动。方向键一次移动一个字母。A 选择字母，X 清除选择，B 返回。</p></div>
 <div class="row"><strong>在六边形网格中移动</strong><p>在六边形和蜿蜒网格中，沿对角线轻扫可移到对角相邻格——轻扫会吸附到六个方向中最接近的一个。</p></div>
-<div class="row"><strong>任意直线</strong><p>单词沿直线排列——正向、反向或斜向。方形网格有 8 个方向，六边形网格有 6 个。</p></div>
-<div class="row"><strong>蜿蜒网格中的单词会拐弯</strong><p>在蜿蜒网格中，每个单词都穿过相邻的格子弯曲延伸，常常折回并与其他单词交叉。从任一端开始依次点按它的字母。剩下的几个字母是打乱顺序的谜题子主题。</p></div>
+<div class="row"><strong>单词方向</strong><p>单词沿直线排列——正向、反向或斜向。方形网格有 8 个方向，六边形网格有 6 个。</p></div>
+<div class="row"><strong>蜿蜒网格</strong><p>在蜿蜒网格中，每个单词都穿过相邻的格子弯曲延伸，常常折回并与其他单词交叉。从任一端开始依次点按它的字母。剩下的几个字母是打乱顺序的谜题子主题。</p></div>
 <div class="row"><strong>听单词</strong><p>向右轻扫越过网格边缘即可进入单词列表，然后点按单词听读音。向左轻扫越过第一列即可返回网格。</p></div>
 </div>
 </details>
@@ -59,15 +59,15 @@
 <details class="section" id="moving-the-grid" open>
 <summary><h2>移动网格</h2><a class="anchor" href="#moving-the-grid" aria-label="移动网格">#</a></summary>
 <div class="card">
-<div class="row"><strong>始终完整显示</strong><p>整个网格始终显示在屏幕上，无需缩放或平移——只需用遥控器瞄准光标。</p></div>
+<div class="row"><strong>网格大小</strong><p>整个网格始终显示在屏幕上，无需缩放或平移——只需用遥控器瞄准光标。</p></div>
 </div>
 </details>
 
 <details class="section" id="scoring" open>
 <summary><h2>计分</h2><a class="anchor" href="#scoring" aria-label="计分">#</a></summary>
 <div class="card">
-<div class="row"><strong>越快越好</strong><p>每个单词起始分值很高，找得越久分值越低。你发现得越快，加到总分里的分数就越多。</p></div>
-<div class="row"><strong>打出连击</strong><p>连续找到单词可保持连击并获得额外分数。停顿会中断连击，但网格越大，两次发现之间允许的时间越长。</p></div>
+<div class="row"><strong>单词分值</strong><p>每个单词起始分值很高，找得越久分值越低。你发现得越快，加到总分里的分数就越多。</p></div>
+<div class="row"><strong>连击</strong><p>连续找到单词可保持连击并获得额外分数。停顿会中断连击，但网格越大，两次发现之间允许的时间越长。</p></div>
 </div>
 </details>
 
@@ -88,8 +88,8 @@
 <div class="row step"><span class="num">3</span><div><strong>选择大小</strong><p>保持“自动大小”开启，即可得到能容纳所有单词的最小网格，也可将其关闭，自行选择大小。</p></div></div>
 <div class="row step"><span class="num">4</span><div><strong>添加单词</strong><p>逐个添加单词。可以输入，也可以按住 Siri 按钮听写。添加时，网格会在后台试排，并告诉你能放入多少单词、多少字母是填充。</p></div></div>
 <div class="row step"><span class="num">5</span><div><strong>预览网格</strong><p>选择“预览”可在单词旁查看网格，以及未放入的单词和建议的更大尺寸。“答案”可显示或隐藏单词的位置，“再试一次”会生成另一个网格。</p></div></div>
-<div class="row step"><span class="num">6</span><div><strong>保存并开始</strong><p>“保存”会将谜题保存在“我的谜题”中，“开始游戏”会开始玩。</p></div></div>
-<div class="row"><strong>修改列表</strong><p>“撤销”会撤回上一次更改，“清除”会清空列表。列表会保存在 iCloud 中，直到你清除它，或用它保存或开始一个谜题。</p></div>
+<div class="row step"><span class="num">6</span><div><strong>保存并开始</strong><p>“保存”会将谜题保存在“我的谜题”中，“开始游戏”会立即开始游戏。</p></div></div>
+<div class="row"><strong>修改列表</strong><p>“撤销”会撤回上一次更改，“清除”会清空列表。列表会保存在 iCloud 中，直到你清除它，或将其保存为谜题或直接开始游戏。</p></div>
 </div>
 </details>
 
@@ -116,7 +116,8 @@
 <details class="section" id="saving-resuming" open>
 <summary><h2>保存与继续</h2><a class="anchor" href="#saving-resuming" aria-label="保存与继续">#</a></summary>
 <div class="card">
-<div class="row"><strong>从上次离开处继续</strong><p>当前游戏会自动保存，并通过 iCloud 在你的设备间同步。选择菜单中的“继续”即可回到游戏。“设置”→“重置所有进度”会在所有设备上删除所有进行中的游戏和已完成的谜题。“我的谜题”会保留，并回到起点。</p></div>
+<div class="row"><strong>保存与同步</strong><p>当前游戏会自动保存，并通过 iCloud 在你的设备间同步。选择菜单中的“继续”即可回到游戏。</p></div>
+<div class="row"><strong>重置所有进度</strong><p>“设置”→“重置所有进度”会在所有设备上删除所有进行中的游戏和已完成的谜题。“我的谜题”会保留，但进度会清零。</p></div>
 </div>
 </details>
 
@@ -131,10 +132,12 @@
 </div>
 </details>
 
-<details class="section" id="make-it-yours" open>
-<summary><h2>个性化</h2><a class="anchor" href="#make-it-yours" aria-label="个性化">#</a></summary>
+<details class="section" id="settings" open>
+<summary><h2>设置</h2><a class="anchor" href="#settings" aria-label="设置">#</a></summary>
 <div class="card">
-<div class="row"><strong>声音与外观</strong><p>通过菜单上的齿轮打开“设置”，可开关音效和单词朗读、选择语音、切换浅色与深色、开关极光背景、选择从菜单到游戏的转场，以及开启 OLED 屏幕保护。</p></div>
+<div class="row"><strong>打开设置</strong><p>选择菜单中的“设置”。</p></div>
+<div class="row"><strong>声音</strong><p>开关音效和单词朗读，并选择语音。</p></div>
+<div class="row"><strong>外观</strong><p>切换浅色与深色、开关极光背景、选择从菜单到游戏的转场，以及开启 OLED 屏幕保护。</p></div>
 </div>
 </details>
 
